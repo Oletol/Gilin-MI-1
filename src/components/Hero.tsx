@@ -31,7 +31,7 @@ export default function Hero() {
           <div className="relative inline-block">
             <div className="w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-2 border-gold-400/30 p-1 animate-pulse-glow">
               <img
-                src="/images/avatar.jpg"
+                src="/images/avatar.png"
                 alt="Михаил Гилин"
                 className="w-full h-full rounded-full object-cover"
               />
@@ -44,9 +44,9 @@ export default function Hero() {
 
         {/* Name */}
         <h1 className="animate-fade-in-up delay-200 font-display text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-tight mb-4">
-          Гилин Михаил
+          Михаил Игоревич
           <br />
-          <span className="gold-gradient-text">Игоревич</span>
+          <span className="gold-gradient-text">Гилин</span>
         </h1>
 
         {/* Subtitle */}
