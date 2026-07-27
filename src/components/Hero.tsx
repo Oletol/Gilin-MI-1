@@ -31,7 +31,7 @@ export default function Hero() {
           <div className="relative inline-block">
             <div className="w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-2 border-gold-400/30 p-1 animate-pulse-glow">
               <img
-                src="/images/avatar.png"
+                src="/images/MI_Gilin.png"
                 alt="Михаил Гилин"
                 className="w-full h-full rounded-full object-cover"
               />
