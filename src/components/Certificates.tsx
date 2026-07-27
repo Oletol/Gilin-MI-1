@@ -2,12 +2,12 @@ import { useState } from 'react';
 import { Award, BadgeCheck, FileText, ExternalLink, Eye } from 'lucide-react';
 import Lightbox from './Lightbox';
 
-import certPmp from '../assets/certificates/cert-pmp.jpg';
-import certTrados from '../assets/certificates/cert-trados.jpg';
-import certMemoq from '../assets/certificates/cert-memoq.jpg';
-import certLocalization from '../assets/certificates/cert-localization.jpg';
-import certIso from '../assets/certificates/cert-iso.jpg';
-import certAi from '../assets/certificates/cert-ai.jpg';
+import certPmp from '../assets/certificates/cert-pmp.png';
+import certTrados from '../assets/certificates/cert-trados.png';
+import certMemoq from '../assets/certificates/cert-memoq.png';
+import certLocalization from '../assets/certificates/cert-localization.png';
+import certIso from '../assets/certificates/cert-iso.png';
+import certAi from '../assets/certificates/cert-ai.png';
 
 interface Certificate {
   title: string;
