@@ -27,7 +27,7 @@ export default function Contact() {
         <div className="grid sm:grid-cols-3 gap-5 max-w-3xl mx-auto mb-12">
           {/* Email */}
           <a
-            href="mailto:contact@example.com"
+            href="mailto:m.gilin@mail.ru"
             className="group bg-navy-900/50 border border-navy-800/50 rounded-2xl p-6 hover:border-gold-500/30 hover:bg-navy-900/70 transition-all duration-500 hover:shadow-lg hover:shadow-gold-500/5 hover:-translate-y-1 flex flex-col items-center text-center"
           >
             <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-gold-500/20 to-gold-600/10 flex items-center justify-center mb-4 group-hover:from-gold-500/30 group-hover:to-gold-600/20 transition-all duration-500">
@@ -42,7 +42,7 @@ export default function Contact() {
 
           {/* Telegram */}
           <a
-            href="#"
+            href="@mikhail_gi"
             className="group bg-navy-900/50 border border-navy-800/50 rounded-2xl p-6 hover:border-blue-500/30 hover:bg-navy-900/70 transition-all duration-500 hover:shadow-lg hover:shadow-blue-500/5 hover:-translate-y-1 flex flex-col items-center text-center"
           >
             <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-600/10 flex items-center justify-center mb-4 group-hover:from-blue-500/30 group-hover:to-blue-600/20 transition-all duration-500">
@@ -57,7 +57,7 @@ export default function Contact() {
 
           {/* Max messenger */}
           <a
-            href="#"
+            href="https://max.ru/u/f9LHodD0cOJT5w363DqBP85EcIh2-TH3OCswuM2TY3QKTwaJDetb0oJCAAM"
             className="group bg-navy-900/50 border border-navy-800/50 rounded-2xl p-6 hover:border-violet-500/30 hover:bg-navy-900/70 transition-all duration-500 hover:shadow-lg hover:shadow-violet-500/5 hover:-translate-y-1 flex flex-col items-center text-center"
           >
             <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-violet-500/20 to-violet-600/10 flex items-center justify-center mb-4 group-hover:from-violet-500/30 group-hover:to-violet-600/20 transition-all duration-500">
