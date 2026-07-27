@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { Heart, Star, Quote, FileText, ExternalLink } from 'lucide-react';
+import Lightbox from './Lightbox';
 
 interface GratitudeItem {
   from: string;
@@ -40,6 +42,8 @@ const gratitudeItems: GratitudeItem[] = [
 ];
 
 export default function Gratitude() {
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
+
   return (
     <section id="gratitude" className="relative bg-navy-900 py-24 md:py-32 overflow-hidden">
       {/* Background */}
@@ -100,7 +104,7 @@ export default function Gratitude() {
                 «{item.text}»
               </p>
 
-              {/* Footer: year + file link */}
+              {/* Footer: year + open button */}
               <div className="mt-5 flex items-center justify-between">
                 <div className="flex items-center gap-1.5 text-gold-500/50">
                   <Heart size={12} />
@@ -110,22 +114,30 @@ export default function Gratitude() {
 
                 <div className="flex items-center gap-3">
                   <span className="text-navy-500 text-xs font-mono">{item.year}</span>
-                  <a
-                    href={item.fileUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    onClick={() => setLightbox({ src: item.fileUrl, alt: item.from })}
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gold-500/10 border border-gold-500/20 text-gold-400 text-xs font-medium hover:bg-gold-500/20 hover:border-gold-500/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:shadow-gold-500/10"
                   >
                     <FileText size={12} />
-                    <span>Открыть письмо</span>
+                    <span>Открыть</span>
                     <ExternalLink size={10} />
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Lightbox */}
+      {lightbox && (
+        <Lightbox
+          src={lightbox.src}
+          alt={lightbox.alt}
+          mode="html"
+          onClose={() => setLightbox(null)}
+        />
+      )}
     </section>
   );
 }

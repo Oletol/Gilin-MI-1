@@ -1,11 +1,13 @@
+import { useState } from 'react';
 import { Award, BadgeCheck, FileText, ExternalLink, Eye } from 'lucide-react';
+import Lightbox from './Lightbox';
 
-import certPmp from '../assets/cert-pmp.png';
-import certTrados from '../assets/cert-trados.png';
-import certMemoq from '../assets/cert-memoq.png';
-import certLocalization from '../assets/cert-localization.png';
-import certIso from '../assets/cert-iso.png';
-import certAi from '../assets/cert-ai.png';
+import certPmp from '../assets/certificates/cert-pmp.jpg';
+import certTrados from '../assets/certificates/cert-trados.jpg';
+import certMemoq from '../assets/certificates/cert-memoq.jpg';
+import certLocalization from '../assets/certificates/cert-localization.jpg';
+import certIso from '../assets/certificates/cert-iso.jpg';
+import certAi from '../assets/certificates/cert-ai.jpg';
 
 interface Certificate {
   title: string;
@@ -92,6 +94,8 @@ const categoryColors = {
 };
 
 export default function Certificates() {
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
+
   return (
     <section id="certificates" className="relative bg-navy-950 py-24 md:py-32 overflow-hidden">
       {/* Background */}
@@ -160,16 +164,14 @@ export default function Certificates() {
                   <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider border ${colors.bg} ${colors.border} ${colors.text}`}>
                     {colors.label}
                   </span>
-                  <a
-                    href={cert.image}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    onClick={() => setLightbox({ src: cert.image, alt: cert.title })}
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gold-500/10 border border-gold-500/20 text-gold-400 text-xs font-medium hover:bg-gold-500/20 hover:border-gold-500/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:shadow-gold-500/10"
                   >
                     <FileText size={12} />
                     <span>Открыть</span>
                     <ExternalLink size={10} />
-                  </a>
+                  </button>
                 </div>
 
                 {/* Corner decoration */}
@@ -181,6 +183,15 @@ export default function Certificates() {
           })}
         </div>
       </div>
+
+      {/* Lightbox */}
+      {lightbox && (
+        <Lightbox
+          src={lightbox.src}
+          alt={lightbox.alt}
+          onClose={() => setLightbox(null)}
+        />
+      )}
     </section>
   );
 }
