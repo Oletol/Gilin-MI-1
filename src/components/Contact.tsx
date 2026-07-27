@@ -42,7 +42,7 @@ export default function Contact() {
 
           {/* Telegram */}
           <a
-            href="@mikhail_gi"
+            href="https://t.me/mikhail_gi/"
             className="group bg-navy-900/50 border border-navy-800/50 rounded-2xl p-6 hover:border-blue-500/30 hover:bg-navy-900/70 transition-all duration-500 hover:shadow-lg hover:shadow-blue-500/5 hover:-translate-y-1 flex flex-col items-center text-center"
           >
             <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-600/10 flex items-center justify-center mb-4 group-hover:from-blue-500/30 group-hover:to-blue-600/20 transition-all duration-500">
