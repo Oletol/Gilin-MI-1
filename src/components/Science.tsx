@@ -1,4 +1,4 @@
-import { BookOpen, FileText, Mic, FlaskConical } from 'lucide-react';
+import { BookOpen, FileText, Mic, FlaskConical, ExternalLink } from 'lucide-react';
 
 interface ScienceItem {
   type: 'publication' | 'conference' | 'research';
@@ -96,9 +96,21 @@ export default function Science() {
             Наука
           </h2>
           <div className="section-divider w-24 mx-auto mb-6" />
-          <p className="text-navy-300 text-base max-w-2xl mx-auto leading-relaxed">
+          <p className="text-navy-300 text-base max-w-2xl mx-auto leading-relaxed mb-6">
             Публикации, доклады и исследовательская деятельность на стыке лингвистики, технологий и управления
           </p>
+
+          {/* eLibrary link */}
+          <a
+            href="https://elibrary.ru/author_items.asp?authorid=1215772"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl bg-gold-500/10 border border-gold-500/20 text-gold-400 text-sm font-medium hover:bg-gold-500/20 hover:border-gold-500/35 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-gold-500/10 group"
+          >
+            <BookOpen size={16} />
+            <span>Профиль на eLibrary</span>
+            <ExternalLink size={14} className="opacity-60 group-hover:opacity-100 transition-opacity" />
+          </a>
         </div>
 
         {/* Science cards */}
