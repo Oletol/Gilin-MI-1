@@ -1,10 +1,11 @@
-import { Heart, Star, Quote } from 'lucide-react';
+import { Heart, Star, Quote, FileText, ExternalLink } from 'lucide-react';
 
 interface GratitudeItem {
   from: string;
   role: string;
   text: string;
   year: string;
+  fileUrl: string;
 }
 
 const gratitudeItems: GratitudeItem[] = [
@@ -13,24 +14,28 @@ const gratitudeItems: GratitudeItem[] = [
     role: 'Институт лингвистики и межкультурной коммуникации',
     text: 'За выдающийся вклад в создание и развитие магистерской программы «Цифровая лингвистика и локализация», формирование нового подхода к подготовке специалистов отрасли',
     year: '2024',
+    fileUrl: '/gratitude/misis.html',
   },
   {
     from: 'Translation Forum Russia',
     role: 'Оргкомитет форума',
     text: 'За многолетнее активное участие в организации и проведении крупнейшего отраслевого мероприятия, вклад в развитие профессионального сообщества',
     year: '2023',
+    fileUrl: '/gratitude/tfr.html',
   },
   {
     from: 'Ассоциация переводческих компаний',
     role: 'Профессиональное объединение',
     text: 'За содействие в продвижении стандартов качества и профессиональной этики в переводческой индустрии',
     year: '2022',
+    fileUrl: '/gratitude/association.html',
   },
   {
     from: 'Qlekta',
     role: 'Руководство компании',
     text: 'За выстраивание системы локализации продуктов маркетплейса и обеспечение высокого качества мультиязычного контента',
     year: '2023',
+    fileUrl: '/gratitude/qlekta.html',
   },
 ];
 
@@ -95,14 +100,27 @@ export default function Gratitude() {
                 «{item.text}»
               </p>
 
-              {/* Year */}
+              {/* Footer: year + file link */}
               <div className="mt-5 flex items-center justify-between">
                 <div className="flex items-center gap-1.5 text-gold-500/50">
                   <Heart size={12} />
                   <Heart size={10} />
                   <Heart size={8} />
                 </div>
-                <span className="text-navy-500 text-xs font-mono">{item.year}</span>
+
+                <div className="flex items-center gap-3">
+                  <span className="text-navy-500 text-xs font-mono">{item.year}</span>
+                  <a
+                    href={item.fileUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gold-500/10 border border-gold-500/20 text-gold-400 text-xs font-medium hover:bg-gold-500/20 hover:border-gold-500/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:shadow-gold-500/10"
+                  >
+                    <FileText size={12} />
+                    <span>Открыть письмо</span>
+                    <ExternalLink size={10} />
+                  </a>
+                </div>
               </div>
             </div>
           ))}

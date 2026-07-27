@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Благодарственное письмо — Qlekta</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #f5f0e8;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      font-family: 'Inter', sans-serif;
+    }
+    .page {
+      background: #fffef9;
+      max-width: 700px;
+      width: 100%;
+      padding: 60px 56px;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.04);
+      border: 1px solid #e8e0d0;
+      position: relative;
+    }
+    .page::before {
+      content: '';
+      position: absolute;
+      top: 16px; left: 16px; right: 16px; bottom: 16px;
+      border: 1px solid #d4c9b5;
+      pointer-events: none;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 2px solid #7c3aed;
+    }
+    .org-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 6px;
+    }
+    .org-sub {
+      font-size: 13px;
+      color: #666;
+      letter-spacing: 0.05em;
+    }
+    .title {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: #7c3aed;
+      margin-bottom: 32px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .recipient {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin-bottom: 24px;
+    }
+    .body-text {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 20px;
+      text-align: justify;
+      text-indent: 2em;
+    }
+    .signature-block {
+      margin-top: 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .signature-left {
+      font-size: 13px;
+      color: #666;
+    }
+    .signature-right {
+      text-align: right;
+    }
+    .signature-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: #1a1a2e;
+    }
+    .signature-role {
+      font-size: 12px;
+      color: #888;
+      margin-top: 4px;
+    }
+    .seal {
+      width: 90px;
+      height: 90px;
+      border: 2px solid #7c3aed44;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: #7c3aed88;
+      text-align: center;
+      line-height: 1.3;
+      margin-top: 20px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .watermark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-30deg);
+      font-family: 'Playfair Display', serif;
+      font-size: 80px;
+      color: rgba(124, 58, 237, 0.03);
+      white-space: nowrap;
+      pointer-events: none;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="watermark">Qlekta</div>
+
+    <div class="header">
+      <div class="org-name">Qlekta</div>
+      <div class="org-sub">Руководство компании</div>
+    </div>
+
+    <div class="title">Благодарственное письмо</div>
+
+    <div class="recipient">Уважаемый Михаил Игоревич!</div>
+
+    <p class="body-text">
+      Руководство компании Qlekta выражает Вам благодарность за профессиональный и ответственный подход к выстраиванию системы локализации продуктов маркетплейса.
+    </p>
+
+    <p class="body-text">
+      За время работы под Вашим руководством была создана комплексная система управления мультиязычным контентом, обеспечивающая высокое качество локализации информационных продуктов на целевых рынках.
+    </p>
+
+    <p class="body-text">
+      Ваша способность выстраивать эффективные процессы, координировать работу многоязычных команд и обеспечивать соблюдение сроков при неизменно высоком качестве результата заслуживает особого признания.
+    </p>
+
+    <p class="body-text">
+      Благодарим Вас за преданность делу и значимый вклад в развитие компании. Желаем новых профессиональных высот!
+    </p>
+
+    <div class="signature-block">
+      <div>
+        <div class="seal">Qlekta<br>печать</div>
+      </div>
+      <div class="signature-right">
+        <div class="signature-left" style="text-align:right;margin-bottom:12px;">2023 г.</div>
+        <div class="signature-name">Генеральный директор</div>
+        <div class="signature-role">Qlekta</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
