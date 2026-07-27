@@ -3,6 +3,9 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Profile from './components/Profile';
 import Experience from './components/Experience';
+import Science from './components/Science';
+import Certificates from './components/Certificates';
+import Gratitude from './components/Gratitude';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -14,6 +17,9 @@ export default function App() {
       <About />
       <Profile />
       <Experience />
+      <Science />
+      <Certificates />
+      <Gratitude />
       <Contact />
       <Footer />
     </div>

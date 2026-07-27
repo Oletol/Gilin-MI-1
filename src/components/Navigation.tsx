@@ -5,7 +5,10 @@ const navItems = [
   { label: 'О себе', href: '#about' },
   { label: 'Профиль', href: '#profile' },
   { label: 'Опыт', href: '#experience' },
-  { label: 'Контакт', href: '#contact' },
+  { label: 'Наука', href: '#science' },
+  { label: 'Сертификаты', href: '#certificates' },
+  { label: 'Благодарности', href: '#gratitude' },
+  { label: 'Контакты', href: '#contact' },
 ];
 
 export default function Navigation() {
@@ -27,17 +30,17 @@ export default function Navigation() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-        <a href="#" className="text-white font-display text-xl font-semibold tracking-wide">
+        <a href="#" className="text-white font-display text-xl font-semibold tracking-wide flex-shrink-0">
           М<span className="text-gold-400">.</span>Гилин
         </a>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-6">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-navy-200 hover:text-gold-400 text-sm font-medium tracking-wide transition-colors duration-300 relative group"
+              className="text-navy-200 hover:text-gold-400 text-sm font-medium tracking-wide transition-colors duration-300 relative group whitespace-nowrap"
             >
               {item.label}
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-gold-400 transition-all duration-300 group-hover:w-full" />
@@ -48,7 +51,7 @@ export default function Navigation() {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-white p-2"
+          className="lg:hidden text-white p-2"
         >
           {mobileOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
@@ -56,14 +59,14 @@ export default function Navigation() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-navy-950/95 backdrop-blur-xl border-t border-navy-800/50 mt-2">
-          <div className="px-6 py-4 space-y-3">
+        <div className="lg:hidden bg-navy-950/95 backdrop-blur-xl border-t border-navy-800/50 mt-2">
+          <div className="px-6 py-4 space-y-1">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileOpen(false)}
-                className="block text-navy-200 hover:text-gold-400 text-sm font-medium py-2 transition-colors"
+                className="block text-navy-200 hover:text-gold-400 hover:bg-navy-800/30 text-sm font-medium py-2.5 px-3 rounded-lg transition-colors"
               >
                 {item.label}
               </a>
