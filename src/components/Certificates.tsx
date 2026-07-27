@@ -1,4 +1,13 @@
-import { Award, ExternalLink, BadgeCheck } from 'lucide-react';
+import { useState } from 'react';
+import { Award, BadgeCheck, FileText, ExternalLink, Eye } from 'lucide-react';
+import Lightbox from './Lightbox';
+
+import certPmp from '../assets/certificates/cert-pmp.jpg';
+import certTrados from '../assets/certificates/cert-trados.jpg';
+import certMemoq from '../assets/certificates/cert-memoq.jpg';
+import certLocalization from '../assets/certificates/cert-localization.jpg';
+import certIso from '../assets/certificates/cert-iso.jpg';
+import certAi from '../assets/certificates/cert-ai.jpg';
 
 interface Certificate {
   title: string;
@@ -6,6 +15,7 @@ interface Certificate {
   year: string;
   category: 'professional' | 'technology' | 'management';
   description?: string;
+  image: string;
 }
 
 const certificates: Certificate[] = [
@@ -15,6 +25,7 @@ const certificates: Certificate[] = [
     year: '2021',
     category: 'management',
     description: 'Международная сертификация в области управления проектами',
+    image: certPmp,
   },
   {
     title: 'SDL Trados Studio — Advanced',
@@ -22,6 +33,7 @@ const certificates: Certificate[] = [
     year: '2020',
     category: 'technology',
     description: 'Продвинутый уровень владения CAT-инструментами',
+    image: certTrados,
   },
   {
     title: 'memoQ Server Administrator',
@@ -29,6 +41,7 @@ const certificates: Certificate[] = [
     year: '2021',
     category: 'technology',
     description: 'Администрирование серверных решений для управления переводами',
+    image: certMemoq,
   },
   {
     title: 'Локализация и интернационализация ПО',
@@ -36,6 +49,7 @@ const certificates: Certificate[] = [
     year: '2019',
     category: 'professional',
     description: 'Стандарты и лучшие практики локализации программного обеспечения',
+    image: certLocalization,
   },
   {
     title: 'Управление качеством перевода (ISO 17100)',
@@ -43,6 +57,7 @@ const certificates: Certificate[] = [
     year: '2020',
     category: 'professional',
     description: 'Требования к процессам перевода и обеспечению качества',
+    image: certIso,
   },
   {
     title: 'AI and Machine Learning for Translation',
@@ -50,6 +65,7 @@ const certificates: Certificate[] = [
     year: '2023',
     category: 'technology',
     description: 'Применение ИИ и машинного обучения в переводческих технологиях',
+    image: certAi,
   },
 ];
 
@@ -78,6 +94,8 @@ const categoryColors = {
 };
 
 export default function Certificates() {
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
+
   return (
     <section id="certificates" className="relative bg-navy-950 py-24 md:py-32 overflow-hidden">
       {/* Background */}
@@ -85,7 +103,6 @@ export default function Certificates() {
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-navy-800 to-transparent" />
         <div className="absolute top-1/3 right-0 w-80 h-80 rounded-full bg-cyan-500/3 blur-3xl" />
         <div className="absolute bottom-1/4 left-0 w-60 h-60 rounded-full bg-amber-500/3 blur-3xl" />
-        {/* Certificate-like decoration */}
         <svg className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] opacity-[0.01]" viewBox="0 0 500 500">
           <rect x="50" y="50" width="400" height="400" rx="20" stroke="#f5c13e" fill="none" strokeWidth="2" />
           <rect x="80" y="80" width="340" height="340" rx="10" stroke="#f5c13e" fill="none" strokeWidth="0.5" strokeDasharray="8,4" />
@@ -142,22 +159,39 @@ export default function Certificates() {
                   </p>
                 )}
 
-                {/* Category badge */}
-                <div className="mt-4 pt-4 border-t border-navy-800/30">
+                {/* Category badge + open button */}
+                <div className="mt-4 pt-4 border-t border-navy-800/30 flex items-center justify-between">
                   <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider border ${colors.bg} ${colors.border} ${colors.text}`}>
                     {colors.label}
                   </span>
+                  <button
+                    onClick={() => setLightbox({ src: cert.image, alt: cert.title })}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gold-500/10 border border-gold-500/20 text-gold-400 text-xs font-medium hover:bg-gold-500/20 hover:border-gold-500/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:shadow-gold-500/10"
+                  >
+                    <FileText size={12} />
+                    <span>Открыть</span>
+                    <ExternalLink size={10} />
+                  </button>
                 </div>
 
                 {/* Corner decoration */}
                 <div className="absolute top-0 right-0 w-12 h-12 overflow-hidden rounded-tr-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <ExternalLink size={10} className="absolute top-3 right-3 text-navy-500" />
+                  <Eye size={10} className="absolute top-3 right-3 text-navy-500" />
                 </div>
               </div>
             );
           })}
         </div>
       </div>
+
+      {/* Lightbox */}
+      {lightbox && (
+        <Lightbox
+          src={lightbox.src}
+          alt={lightbox.alt}
+          onClose={() => setLightbox(null)}
+        />
+      )}
     </section>
   );
 }
